@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,11 @@ Route::prefix('clientes')->group(function () {
     Route::delete('/{id}',[ ClienteController::class, 'delete']);
     Route::get('/{id}',[ ClienteController::class, 'get']);
     Route::put('/{id}',[ ClienteController::class, 'update']);
+});
+
+Route::prefix('pedido')->group(function () {
+    Route::get('/',[ PedidoController::class, 'index']);
+    Route::post('/',[ PedidoController::class, 'create']);
+    Route::get('/{id}',[ PedidoController::class, 'get']);
+    Route::put('/{id}',[ PedidoController::class, 'update']);
 });
