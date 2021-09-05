@@ -13,4 +13,9 @@ class Cliente extends Model
       'apellido',
       'dni'
     ];
+
+    public function pedidos()
+    {
+      return $this->hasMany('App\Pedido');
+    }
 }

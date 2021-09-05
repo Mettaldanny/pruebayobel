@@ -15,9 +15,10 @@ class PedidoController extends Controller
 
     public function create(Request $request)
     {
+      $cliente = Cliente::all();
       $data['fecha'] = $request['fecha'];
       $data['codigo'] = $request['codigo'];
-      $data['dni'] = $request['dni'];
+      $data['cliente_id'] = $request['cliente_id'];
       Pedido::create($data);
       return response()->json([
           'message' => "Creado exitosamente",
@@ -30,7 +31,7 @@ class PedidoController extends Controller
       $data['fecha'] = $request['fecha'];
       $data['codigo'] = $request['codigo'];
       $data['usuario_id'] = $request['usuario_id'];
-      Cliente::find($id)->update($data);
+      Pedido::find($id)->update($data);
       return response()->json([
           'message' => "Actualizado exitosamente",
           'success' => true

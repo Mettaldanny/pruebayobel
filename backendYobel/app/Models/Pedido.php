@@ -13,5 +13,10 @@ class Pedido extends Model
       'fecha',
       'codigo',
       'cliente_id'
-    ]
+    ];
+
+    public function clientes()
+    {
+      return $this->belongsTo('App\Pedido');
+    }
 }
