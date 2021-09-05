@@ -13,12 +13,12 @@
             <th>Acciones</th>
         </tr>
         <tr *ngFor="let cliente of clientes">
-            <td>{{ clientes.id}}</td>
-            <td>{{ clientes.nombre}}</td>
-            <td>{{ clientes.apellido}}</td>
-            <td>{{ clientes.dni}}</td>
+            <td>{{ cliente.id}}</td>
+            <td>{{ cliente.nombre}}</td>
+            <td>{{ cliente.apellido}}</td>
+            <td>{{ cliente.dni}}</td>
             <td>
-                <a href="#" [routerLink]="['/clientes/', 'edit', clientes.id ]" class="btn btn-primary" >Editar</a>
+                <a href="#" [routerLink]="['/clientes/', 'edit', cliente.id ]" class="btn btn-primary" >Editar</a>
                 <button type="button" (click)="deleteCliente(cliente.id)" class="btn btn-danger">Eliminar</button>
             </td>
         </tr>

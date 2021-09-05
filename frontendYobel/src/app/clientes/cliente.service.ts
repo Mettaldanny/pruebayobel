@@ -9,7 +9,7 @@ import {Cliente} from './cliente';
 })
 export class ClienteService {
 
-  private apiURL = "http://localhost:8000/api/clientes";
+  private apiURL = "http://localhost:8000/api/clientes/";
 
   httpOptions = {
     headers: new HttpHeaders({

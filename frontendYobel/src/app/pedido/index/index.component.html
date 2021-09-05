@@ -1,0 +1,30 @@
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>Lista de Pedidos</h4>
+      <a routerLink="/pedido/create" class="btn btn-success">Nuevo Pedido</a>
+    </div>
+
+    <br>
+    
+    <table class="table ">
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Codigo</th>
+        <th>Nombre Cliente</th>
+        <th>DNI Cliente</th>
+        <th width="220px">Acciones</th>
+      </tr>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedidos.id }}</td>
+        <td>{{ pedidos.fecha }}</td>
+        <td>{{ pedidos.codigo }}</td>
+        <td>{{ pedidos.cliente_id }}</td>
+        <td>{{ pedidos.cliente_id }}</td>
+        <td>
+          <a href="#" [routerLink]="['/pedido/', 'edit', pedido.id  ]" class="btn btn-primary">Editar</a>          
+        </td>
+      </tr>
+    </table>
+ </section>

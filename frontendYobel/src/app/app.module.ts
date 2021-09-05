@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ClientesModule } from './clientes/clientes.module';
+import { PedidoModule } from './pedido/pedido.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -18,7 +19,7 @@ import { RouterModule } from '@angular/router';
     ClientesModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule, PedidoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

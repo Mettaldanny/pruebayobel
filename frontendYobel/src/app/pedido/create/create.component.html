@@ -1,0 +1,60 @@
+<div>
+
+    <div class="d-flex justify-content-between">
+      <h4>Creación de Pedido</h4>
+      <a href="#" routerLink="/pedido/index" class="btn btn-primaryt">Atrás</a>
+    </div>
+  
+    <hr/>
+  
+      <form (ngSubmit)="submit()">
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="title">Fecha:</label>
+                <input
+                  formControlName="fecha"
+                  id="fecha"
+                  type="date"
+                  class="form-control">
+                <div *ngIf="f.fecha.touched && f.fecha.invalid" class="alert alert-danger">
+                    <div *ngIf="f.fecha.errors.required">*Fecha es requerida.</div>
+                    <div *ngIf="f.fecha.errors.pattern">*Debe escoger una fecha valida.</div>
+                </div>
+              </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="codigo">Código:</label>
+                <input
+                  formControlName="codigo"
+                  id="codigo"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.codigo.touched && f.codigo.invalid" class="alert alert-danger">
+                    <div *ngIf="f.codigo.errors.required">*Codigo es requerido.</div>
+                    <div *ngIf="f.codigo.errors.pattern">*El codigo debe contener solamente numeros.</div>
+                </div>
+              </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="cliente_id">Cliente:</label>
+                <input
+                  formControlName="cliente_id"
+                  id="cliente_id"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.cliente_id.touched && f.cliente_id.invalid" class="alert alert-danger">
+                    <div *ngIf="f.cliente_id.errors.required">*Cliente es requerido.</div>
+                    
+                </div>
+              </div>
+          </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+      </form>
+  </div>
+  
