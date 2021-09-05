@@ -1,0 +1,60 @@
+<div>
+
+    <div class="d-flex justify-content-between">
+      <h4>Crear cliente</h4>
+      <a href="#" routerLink="/clientes/index" class="btn btn-primaryt">Atrás</a>
+    </div>
+  
+    <hr/>
+  
+      <form [formGroup]="form" (ngSubmit)="submit()">
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="title">Nombre:</label>
+                <input
+                  formControlName="nombre"
+                  id="nombre"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                    <div *ngIf="f.nombre.errors.required">*Nombre es requerido.</div>
+                    <div *ngIf="f.nombre.errors.pattern">*El nombre solo puede contener letras.</div>
+                </div>
+              </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Apellido:</label>
+              <input
+                formControlName="apellido"
+                id="apellido"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.apellido.touched && f.apellido.invalid" class="alert alert-danger">
+                  <div *ngIf="f.apellido.errors.required">*Apellido es requerido.</div>
+                  <div *ngIf="f.apellido.errors.pattern">*El apellido solo puede contener letras.</div>
+              </div>
+            </div>
+         </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="phone">DNI:</label>
+                <input
+                  formControlName="dni"
+                  id="dni"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.dni.touched && f.dni.invalid" class="alert alert-danger">
+                    <div *ngIf="f.dni.errors.required">*DNI es requerido.</div>
+                    <div *ngIf="f.dni.errors.pattern">*El DNI solo puede contener números.</div>
+                </div>
+              </div>
+          </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+      </form>
+  </div>
+  

@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        <h3>Clientes</h3>
+        <a routerLink = "/clientes/create" class="btn btn-success">Crear Cliente</a>
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Acciones</th>
+        </tr>
+        <tr *ngFor="let cliente of clientes">
+            <td>{{ clientes.id}}</td>
+            <td>{{ clientes.nombre}}</td>
+            <td>{{ clientes.apellido}}</td>
+            <td>{{ clientes.dni}}</td>
+            <td>
+                <a href="#" [routerLink]="['/clientes/', 'edit', cliente.id ]" class="btn btn-primary" >Editar</a>
+                <button type="button" (click)="deleteCliente(cliente.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </table>
+</section>>
