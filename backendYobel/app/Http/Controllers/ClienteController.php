@@ -13,12 +13,12 @@ class ClienteController extends Controller
   }
 
   public function create(Request $request){
-    $data['name'] = $request['name'];
-    $data['email'] = $request['email'];
-    $data['phone'] = $request['phone'];
+    $data['nombre'] = $request['nombre'];
+    $data['apellido'] = $request['apellido'];
+    $data['dni'] = $request['dni'];
     Cliente::create($data);
     return response()->json([
-        'message' => "Successfully created",
+        'message' => "Creado exitosamente",
         'success' => true
     ], 200);
   }
@@ -26,7 +26,7 @@ class ClienteController extends Controller
   public function delete($id){
     $res = Cliente::find($id)->delete();
     return response()->json([
-        'message' => "Successfully deleted",
+        'message' => "Eliminado exitosamente",
         'success' => true
     ], 200);
   }
@@ -37,12 +37,12 @@ class ClienteController extends Controller
   }
 
   public function update(Request $request,$id){
-    $data['name'] = $request['name'];
-    $data['email'] = $request['email'];
-    $data['phone'] = $request['phone'];
+    $data['nombre'] = $request['nombre'];
+    $data['apellido'] = $request['apellido'];
+    $data['dni'] = $request['dni'];
     Cliente::find($id)->update($data);
     return response()->json([
-        'message' => "Successfully updated",
+        'message' => "Actualizado exitosamente",
         'success' => true
     ], 200);
   }

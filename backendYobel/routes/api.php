@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('cliente')->group(function () {
+Route::prefix('clientes')->group(function () {
     Route::get('/',[ ClienteController::class, 'getAll']);
     Route::post('/',[ ClienteController::class, 'create']);
     Route::delete('/{id}',[ ClienteController::class, 'delete']);
